@@ -1,44 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Table from 'react-bootstrap/Table';
 import './Customtable.css';
 import AtributoTabla from "./Atributostabla";
-import estudianteAtributo from "../estudianteAtributos";
+import ContenidoTabla from "./Contenidotabla";
+import tableFieldDescription from "../data/tableFieldDescription";
 
+function BasicTable({atributos, data}) {
+    let count = 0;
+    var caracter = "#";
+    return (
+        <div className={'tablesize'}>
+            <Table striped bordered hover responsive>
+                <thead>
+                <tr>
+                    <th>{caracter}</th>
+                    {atributos.map(atributo => (
+                                <AtributoTabla name={tableFieldDescription[atributo]}/>
+                            )
+                    )}
+                </tr>
+                </thead>
+                <tbody>
+                {data.map((item) => {
+                    count += 1
+                    return (
+                        <ContenidoTabla count={count} {...item}/>
+                    )
+                })}
+                </tbody>
+            </Table>
+        </div>
 
-function BasicTable(props) {
-  return (
-      <div className={'tablesize'}>
-         <Table striped bordered hover>
-      <thead>
-        <tr>
-          {estudianteAtributo.map(atributo => (
-              <AtributoTabla name={atributo}/>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </Table>
-      </div>
-
-  );
+    );
 }
 
 export default BasicTable;

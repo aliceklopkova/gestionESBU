@@ -1,8 +1,8 @@
 const estudianteDato = [
     {
-        CI: "12345678901",
         nombre: "Mario",
         apellidos: "Martinez Gonzales",
+        CI: "12345678901",
         sexo: "M",
         fecha_nacimiento: "5-5-2008",
         direccion: "Zanja #300 / Lealtad y Campanario",
@@ -12,6 +12,10 @@ const estudianteDato = [
         provincia: "La Habana",
         nombre_padre: "Mauricio Martinez Campos",
         nombre_madre: "Luisa Gonzalez Rosales",
+    },
+    {
+        nombre: "Maria",
+        apellidos: "Marti Gonzales"
     }
 ];
 export default estudianteDato;
