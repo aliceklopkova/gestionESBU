@@ -1,0 +1,61 @@
+.letra {
+    font-family: 'Anton', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+    text-align: center;
+    color: #f1f1f1;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    z-index: 2;
+
+}
+.curso{
+    font-family: 'Anton', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-size: 35px;
+    text-align: center;
+    color: #f1f1f1;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    z-index: 2;
+}
+
+.promedio{
+    font-family: 'Anton', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: #f1f1f1;
+    position: absolute;
+    top: 43%;
+    left: 25%;
+    z-index: 2;
+}
+
+.grafica {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 20%;
+    z-index: 2;
+}
+
+
+.pizarra {
+    position: relative;
+    height: 800px;
+    width: 1500px;
+    padding-top: 50px;
+    padding-left: 100px;
+
+    z-index: 1;
+}
+
+.pizarra_fondo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
