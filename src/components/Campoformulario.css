@@ -1,0 +1,8 @@
+.Campo{
+    width: 700px;
+}
+.posicion{
+    width: 500px;
+    padding: 20px;
+    display: inline-block;
+}

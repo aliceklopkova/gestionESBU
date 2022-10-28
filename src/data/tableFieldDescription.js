@@ -1,5 +1,5 @@
-const tableFieldDescription={
-     nombre: "nombre",
+const tableFieldDescription = {
+    nombre: "nombre",
     apellidos: "apellidos",
     CI: "CI",
     sexo: "sexo",

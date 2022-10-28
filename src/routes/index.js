@@ -5,9 +5,14 @@ import estudianteAtributo from "../estudianteAtributos";
 import BasicTable from "../components/Customtable";
 import Estudiante from "../models/estudiante";
 import EstudianteModel from "../models/estudiante";
+import CustomForm from "../components/Customformulario";
+import formFieldDescription from "../data/formFieldDescription";
+
+
 
 export const authRoutes = [
     {path: "/", page: <Estadistica/>},
-    {path: "/estudiante", page: <BasicTable atributos={Object.keys(EstudianteModel)} data={estudianteDato}/>}
+    {path: "/estudiante", page: <BasicTable atributos={Object.keys(EstudianteModel)} data={estudianteDato}/>},
+    {path: "/estudiante/Formulario", page: <CustomForm  atributos={Object.keys(EstudianteModel)}  />},
 ];
 export const publicRoutes = [];

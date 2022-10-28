@@ -9,7 +9,7 @@ function Buttonsgroup() {
   return (
       <div className="sidebar">
           <Link to={"/"}>Home</Link>
-          <Link to={"/estudiante"}>Estdiantes</Link>
+          <Link to={"/estudiante"}>Estudiantes</Link>
           <Link to={"/profesor"}>Profesores</Link>
 
 

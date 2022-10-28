@@ -11,7 +11,7 @@ function Dbody({authRoutes}) {
         <div className={'box'}>
             <Routes>
                 {authRoutes.map(({path, page}) => (
-                    <Route path={path} element={page}/>
+                    <Route key={path} path={path} element={page}/>
                 ))}
             </Routes>
         </div>
