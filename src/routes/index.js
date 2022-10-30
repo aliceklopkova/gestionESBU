@@ -3,16 +3,17 @@ import BasicExample from "../components/Customtable";
 import estudianteDato from "../estudianteDato";
 import estudianteAtributo from "../estudianteAtributos";
 import BasicTable from "../components/Customtable";
-import Estudiante from "../models/estudiante";
-import EstudianteModel from "../models/estudiante";
+import Estudiante, {estudianteFields} from "../models/estudianteModel";
+import EstudianteModel from "../models/estudianteModel";
 import CustomForm from "../components/Customformulario";
 import formFieldDescription from "../data/formFieldDescription";
+import estudianteApi from "../api/estudiante";
 
 
 
 export const authRoutes = [
     {path: "/", page: <Estadistica/>},
-    {path: "/estudiante", page: <BasicTable atributos={Object.keys(EstudianteModel)} data={estudianteDato}/>},
-    {path: "/estudiante/Formulario", page: <CustomForm  atributos={Object.keys(EstudianteModel)}  />},
+    {path: "/estudiante", page: <BasicTable fields={estudianteFields} model={EstudianteModel} api={estudianteApi}/>},
+    {path: "/estudiante/Formulario", page: <CustomForm  fields={estudianteFields}  />},
 ];
 export const publicRoutes = [];
