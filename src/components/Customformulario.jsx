@@ -11,12 +11,12 @@ import AtributoTabla from "./Atributostabla";
 import tableFieldDescription from "../data/tableFieldDescription";
 import formFieldDescription from "../data/formFieldDescription";
 
-function CustomForm({atributos}) {
+function CustomForm({fields}) {
     return (
         <div className={'Formsize'}>
             <Form>
                 <div>
-                    {atributos.map((item) => (
+                    {fields.map((item) => (
                             <CampoFormulario key={item} data={formFieldDescription[item]}/>
                         )
                     )}
