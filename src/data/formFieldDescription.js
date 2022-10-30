@@ -1,88 +1,110 @@
 const formFieldDescription = {
     nombre: {
         id: "FormControlNombre",
-        name: "nombre",
+        name: "Nombre",
         type: "text",
         secondEntry: "Escriba el nombre ",
         text: "",
     },
     apellidos: {
         id: "FormControlApellidos",
-        name: "apellidos",
+        name: "Apellidos",
         type: "text",
         secondEntry: "Escriba los apellidos ",
         text: "",
     },
-    CI: {
+    fecha_nacimiento: {
+        id: "FormControlNacimiento",
+        name: "Fecha de nacimiento",
+        type: "date",
+        secondEntry: "Escriba la fecha de nacimiento ",
+        text: "",
+    },
+    ci: {
         id: "FormControlCI",
         name: "CI",
         type: "text",
         secondEntry: "Escriba el CI ",
         text: "",
     },
-    sexo: {
-        id: "FormControlSexo",
-        name: "sexo",
-        type: "text",
-        secondEntry: "Escriba 'F' para femenino o 'M' para masculino",
-        text: "",
-    },
-    fecha_nacimiento: {
-        id: "FormControlNacimiento",
-        name: "fecha de nacimiento",
-        type: "date",
-        secondEntry: "Escriba la fecha de nacimiento ",
-        text: "",
-    },
     direccion: {
         id: "FormControlDireccion",
-        name: "dirección",
+        name: "Dirección",
         type: "text",
         secondEntry: "Escriba la dirección",
         text: "",
     },
-    telefono: {
-        id: "FormControlTelefono",
-        name: "teléfono",
-        type: "number",
-        secondEntry: "Escriba el teléfono",
-        text: "",
-    },
     reparto: {
         id: "FormControlReparto",
-        name: "reparto",
+        name: "Reparto",
         type: "text",
         secondEntry: "Escriba el reparto",
         text: "",
     },
     municipio: {
         id: "FormControlMunicipio",
-        name: "municipio",
+        name: "Municipio",
         type: "text",
         secondEntry: "Escriba el municipio",
         text: "",
     },
     provincia: {
         id: "FormControlProvincia",
-        name: "provincia",
+        name: "Provincia",
         type: "text",
         secondEntry: "Escriba la provincia",
         text: "",
     },
-    nombre_padre: {
+    numero_telefono: {
+        id: "FormControlTelefono",
+        name: "Teléfono",
+        type: "number",
+        secondEntry: "Escriba el teléfono",
+        text: "",
+    },
+    genero: {
+        id: "FormControlGenero",
+        name: "Género ",
+        type: "text",
+        secondEntry: "Escriba 'F' para femenino o 'M' para masculino",
+        text: "",
+    },
+   edad:{
+        id: "FormControlEdad",
+        name: "Edad",
+        type: "text",
+        secondEntry: "Escriba 'F' para femenino o 'M' para masculino",
+        text: "",
+   },
+    nombre_apellido_padre: {
         id: "FormControlPadre",
-        name: "nombre y apellidos del padre",
+        name: "Nombre y apellidos del padre",
         type: "text",
         secondEntry: "Escriba el nombre y apellidos ",
         text: "",
     },
-    nombre_madre: {
+    nombre_apellido_madre: {
         id: "FormControlMadre",
-        name: "nombre y apellidos de la madre",
+        name: "Nombre y apellidos de la madre",
         type: "text",
         secondEntry: "Escriba el nombre y apellidos ",
         text: "",
-    }
+    },
+    grado:{
+        id: "FormControlGrado",
+        name: "Grado",
+        type: "text",
+        secondEntry: "Escriba el grado",
+        text: "",
+     },
+     grupo:{
+        id: "FormControlGrupo",
+        name: "Grupo",
+        type: "text",
+        secondEntry: "Escriba el grupo",
+        text: "",
+     }
+
 }
 
 
