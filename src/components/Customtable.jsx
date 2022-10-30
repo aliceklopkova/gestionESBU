@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
 import './Customtable.css';
 import AtributoTabla from "./Atributostabla";
@@ -7,19 +7,33 @@ import BotonAgregar from "./Boton";
 import tableFieldDescription from "../data/tableFieldDescription";
 import {Link} from "react-router-dom";
 
-function BasicTable({atributos, data}) {
+const createRow = (item, model) => {
+    const row = new model()
+    Object.assign(row, item)
+    return row
+}
+
+function BasicTable({fields,model, api}) {
+    const [data, setData] = useState([])
     let count = 0;
     var caracter = "#";
+
+    async function fetchData(){
+        return await api.list()
+    }
+
+    useEffect(() => {
+        fetchData().then((items)=> setData(items.data))
+    }, [])
+    console.log(data)
     return (
         <div>
-
-
             <div className={'tablesize'}>
                 <Table striped bordered hover responsive>
                     <thead>
                     <tr>
                         <th>{caracter}</th>
-                        {atributos.map(atributo => (
+                        {fields.map(atributo => (
                                 <AtributoTabla name={tableFieldDescription[atributo]}/>
                             )
                         )}
@@ -29,7 +43,7 @@ function BasicTable({atributos, data}) {
                     {data.map((item) => {
                         count += 1
                         return (
-                            <ContenidoTabla count={count} {...item}/>
+                            <ContenidoTabla count={count} item={createRow(item, model)}/>
                         )
                     })}
                     </tbody>
