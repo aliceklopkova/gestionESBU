@@ -1,9 +1,9 @@
 import {del, get, post, put} from "./index";
 
-const getApi = (endpoint = "", byID = false) => (
+const getApi = (endpoint = "",id="") => (
     {
-        get(param) {
-            return get(byID ? `${endpoint}${param}` : param,)
+        get(params) {
+            return get(id ? `${endpoint}${id}/` : null, params)
         },
         list(params) {
             return get(endpoint, params)
@@ -12,10 +12,10 @@ const getApi = (endpoint = "", byID = false) => (
             return post(endpoint, data)
         },
         update(data) {
-            return put(endpoint, data)
+            return put(id ? `${endpoint}${id}/` : null, data)
         },
         delete(param) {
-            return del(byID ? `${endpoint}${param}` : param,)
+            return del(id ? `${endpoint}${id}/` : null, param)
         }
     }
 )
