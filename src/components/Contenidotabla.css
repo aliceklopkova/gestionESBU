@@ -1,0 +1,14 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+.borrarcolor{
+    color: red;
+    padding: 10px;
+}
+.icono{
+    padding: 10px;
+    color: green;
+}
