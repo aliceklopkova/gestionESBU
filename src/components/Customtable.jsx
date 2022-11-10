@@ -3,9 +3,10 @@ import Table from 'react-bootstrap/Table';
 import './Customtable.css';
 import AtributoTabla from "./Atributostabla";
 import ContenidoTabla from "./Contenidotabla";
-import BotonAgregar from "./Boton";
 import tableFieldDescription from "../data/tableFieldDescription";
-import {Link} from "react-router-dom";
+import {Link, Outlet, useLocation} from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Alerta from "./Mensaje";
 
 const createRow = (item, model) => {
     const row = new model()
@@ -13,24 +14,28 @@ const createRow = (item, model) => {
     return row
 }
 
-function BasicTable({fields,model, api}) {
+function BasicTable({fields, model, api}) {
+    const location = useLocation()
     const [data, setData] = useState([])
     let count = 0;
     var caracter = "#";
+    var editar = "Editar";
 
-    async function fetchData(){
-        return await api.list()
+    async function fetchData() {
+        return await api().list()
     }
 
     useEffect(() => {
-        fetchData().then((items)=> setData(items.data))
+        fetchData().then((items) => setData(items.data))
     }, [])
     console.log(data)
     return (
-        <div>
+        <div class="basic-table">
+            <Outlet/>
+            <Alerta/>
             <div className={'tablesize'}>
                 <Table striped bordered hover responsive>
-                    <thead>
+                    <thead className={"textoatributo"}>
                     <tr>
                         <th>{caracter}</th>
                         {fields.map(atributo => (
@@ -43,14 +48,17 @@ function BasicTable({fields,model, api}) {
                     {data.map((item) => {
                         count += 1
                         return (
-                            <ContenidoTabla count={count} item={createRow(item, model)}/>
+                            <ContenidoTabla count={count} item={createRow(item, model)} data={data}/>
                         )
                     })}
                     </tbody>
                 </Table>
                 <div className={'button_position'}>
-                    <BotonAgregar link={<Link className={'linkboton'} style={{textDecoration: 'none'}}
-                                              to={"/estudiante/Formulario"}>{"Añadir"}</Link>}/>
+                    <Link className={''} style={{textDecoration: 'none'}}
+                          to={`${location.pathname}/add`}>
+                        <Button style={{width: '100px'}} variant="dark" type="">Añadir</Button>
+                    </Link>
+
                 </div>
             </div>
 
