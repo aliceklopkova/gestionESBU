@@ -19,9 +19,9 @@
 }
 
 /* Active/current link */
-.sidebar a.active {
-  background-color: rgb(242, 211, 136);
-  color: grey;
+.sidebar link.active {
+  background-color: #555;
+  color: white;
 }
 
 /* Links on mouse-over */

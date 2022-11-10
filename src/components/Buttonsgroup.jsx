@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 function Buttonsgroup() {
   return (
       <div className="sidebar">
-          <Link to={"/"}>Home</Link>
+          <Link to={"/home"}>Home</Link>
           <Link to={"/estudiante"}>Estudiantes</Link>
           <Link to={"/profesor"}>Profesores</Link>
 
