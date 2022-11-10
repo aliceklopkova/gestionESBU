@@ -3,5 +3,10 @@
 }
 .Botonsubmit{
     padding-left: 50px;
+    display: inline;
 
+}
+.botondanger{
+    padding: 20px;
+    display: inline;
 }
