@@ -58,7 +58,7 @@ const formFieldDescription = {
     numero_telefono: {
         id: "FormControlTelefono",
         name: "Teléfono",
-        type: "number",
+        type: "text",
         secondEntry: "Escriba el teléfono",
         text: "",
     },
@@ -67,15 +67,16 @@ const formFieldDescription = {
         name: "Género ",
         type: "text",
         secondEntry: "Escriba 'F' para femenino o 'M' para masculino",
+        values: "",
         text: "",
     },
-   edad:{
+    edad: {
         id: "FormControlEdad",
         name: "Edad",
         type: "text",
         secondEntry: "Escriba 'F' para femenino o 'M' para masculino",
         text: "",
-   },
+    },
     nombre_apellido_padre: {
         id: "FormControlPadre",
         name: "Nombre y apellidos del padre",
@@ -90,20 +91,20 @@ const formFieldDescription = {
         secondEntry: "Escriba el nombre y apellidos ",
         text: "",
     },
-    grado:{
+    grado: {
         id: "FormControlGrado",
         name: "Grado",
         type: "text",
         secondEntry: "Escriba el grado",
         text: "",
-     },
-     grupo:{
+    },
+    grupo: {
         id: "FormControlGrupo",
         name: "Grupo",
         type: "text",
         secondEntry: "Escriba el grupo",
         text: "",
-     }
+    }
 
 }
 
