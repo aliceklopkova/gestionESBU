@@ -1,8 +1,25 @@
 import React from 'react';
 import {Col, Button, Row, Container, Card, Form} from "react-bootstrap";
 import './Logincomponent.css';
+import Auth from "../api/auth";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {login} from "../redux/user/userSlice"
 
 function LoginComponente() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const data = new FormData(e.currentTarget)
+        const username = data.get("username")
+        const password = data.get("password")
+        Auth.login(username, password).then(()=>{
+            dispatch(login())
+            navigate("/home")
+        })
+
+    }
     return (
         <div>
             <Container>
@@ -25,13 +42,13 @@ function LoginComponente() {
                                     <p style={{textAlign: "center"}} className=" mb-5">Por favor escriba su usuario y
                                         contraseña para autenticarse!</p>
                                     <div className="mb-3">
-                                        <Form>
+                                        <Form onSubmit={handleSubmit}>
                                             <Form.Group className="mb-3"
                                                         controlId="formBasicEmail">
                                                 {/*<Form.Label >*/}
                                                 {/*    Usuario*/}
                                                 {/*</Form.Label>*/}
-                                                <Form.Control size="lg" placeholder="Usuario*" type="text" required/>
+                                                <Form.Control size="lg" name="username" placeholder="Usuario*" type="text" required/>
                                             </Form.Group>
 
                                             <Form.Group
@@ -39,7 +56,7 @@ function LoginComponente() {
                                                 controlId="formBasicPassword"
                                             >
                                                 {/*<Form.Label>Contraseña</Form.Label>*/}
-                                                <Form.Control size="lg" type="password" placeholder="Contraseña*"
+                                                <Form.Control name="password" size="lg" type="password" placeholder="Contraseña*"
                                                               required/>
                                             </Form.Group>
                                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
