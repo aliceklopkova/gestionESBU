@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom/client";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from "react-router-dom";

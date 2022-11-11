@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom/client";
 import './Estadistica.css';
 import Cardr from "./Card";
 import Graficabarra from "./Graficabarra";

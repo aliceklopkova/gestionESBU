@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Table from 'react-bootstrap/Table';
 import './Customtable.css';
 import AtributoTabla from "./Atributostabla";
@@ -6,7 +6,6 @@ import ContenidoTabla from "./Contenidotabla";
 import tableFieldDescription from "../data/tableFieldDescription";
 import {Link, Outlet, useLocation} from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Alerta from "./Mensaje";
 
 const createRow = (item, model) => {
     const row = new model()

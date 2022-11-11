@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Button, Row, Container, Card, Form} from "react-bootstrap";
+import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 import './Logincomponent.css';
 import Auth from "../api/auth";
 import {useNavigate} from "react-router-dom";

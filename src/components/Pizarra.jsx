@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from "react-dom/client";
 import './Pizarra.css';
-import Graficabarra from "./Graficabarra";
 
 function Pizarra() {
     return (

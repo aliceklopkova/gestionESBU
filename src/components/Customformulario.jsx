@@ -1,15 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {useLocation, useParams} from 'react-router-dom'
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation, useParams} from 'react-router-dom'
 import './Customformulario.css';
-import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
 import CampoFormulario from "./Campoformulario";
-import AtributoTabla from "./Atributostabla";
-import tableFieldDescription from "../data/tableFieldDescription";
 import formFieldDescription from "../data/formFieldDescription";
 
 function CustomForm({fields, model, api, modificar}) {
