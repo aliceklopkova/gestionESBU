@@ -5,6 +5,7 @@ import Auth from "../api/auth";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {login} from "../redux/user/userSlice"
+import Footer from "./Footer";
 
 function LoginComponente() {
     const dispatch = useDispatch()
@@ -73,7 +74,7 @@ function LoginComponente() {
                             </Card.Body>
                         </Card>
                     </Col>
-                     <footer style={{textAlign:"center"}}> &copy; Copyright 2022, Alicia </footer>
+                     <Footer/>
                 </Row>
 
             </Container>
