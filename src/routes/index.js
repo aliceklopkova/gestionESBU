@@ -11,6 +11,7 @@ import estudianteApi from "../api/estudiante";
 import Dashboard from "../components/Dashboard";
 import AlertaEliminar from "../components/AlertaEliminar";
 import LoginComponente from "../components/Logincomponent";
+import Logout from "../components/Logout";
 
 
 export const authRoutes = [
@@ -37,6 +38,10 @@ export const authRoutes = [
                 path: "/estudiante/:id",
                 element: <CustomForm fields={estudianteFields} model={EstudianteModel} api={estudianteApi}
                                      modificar={true}/>
+            },
+            {
+                path: "/logout",
+                element: <Logout/>
             },
 
         ]
