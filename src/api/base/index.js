@@ -1,5 +1,6 @@
-import axios from 'axios'
+import getAxiosInstance from "./get-instance";
 
+const axios = getAxiosInstance()
 export const get = async (url, params) => (
     axios.get(url, {params})
 )
