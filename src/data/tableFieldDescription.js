@@ -14,5 +14,15 @@ const tableFieldDescription = {
     nombre_apellido_madre: "Madre",
     grado:"Grado",
     grupo:"Grupo",
+    categoria_docente:"Categoria Docente",
+    asignatura: "Asignatura",
+    grupos: "Grupos",
+    estudiante: "Estudiante",
+    valor: "Valor",
+    tipo: "Tipo",
+    curso: "Curso",
+    archivo: "Archivo",
+    nivel_de_estudio: "Nivel de Estudio",
+    categoria_cientifica: "Categoria Cientifica"
 }
 export default tableFieldDescription;
