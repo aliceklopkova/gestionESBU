@@ -32,7 +32,7 @@ function BasicTable({fields, model, api}) {
     return (
         <div class="basic-table">
             <Outlet/>
-            <Alerta/>
+            {/*<Alerta/>*/}
             <div className={'tablesize'}>
                 <Table striped bordered hover responsive>
                     <thead className={"textoatributo"}>
