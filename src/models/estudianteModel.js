@@ -1,4 +1,5 @@
-export const estudianteFields = ["nombre", "apellidos", "fecha_nacimiento", "ci", "direccion", "reparto", "municipio", "provincia", "numero_telefono", "genero", "edad", "nombre_apellido_padre", "nombre_apellido_madre", "grado", "grupo",]
+import {userFields} from "./base/userModel";
+export const estudianteFields = userFields.concat(["nombre_apellido_padre", "nombre_apellido_madre", "grado", "grupo",])
 
 class EstudianteModel {
     constructor(nombre, apellidos, fecha_nacimiento, ci, direccion, reparto, municipio, provincia, numero_telefono, genero, edad, nombre_apellido_padre, nombre_apellido_madre, grado, grupo,) {
