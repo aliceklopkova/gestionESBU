@@ -1,8 +1,10 @@
 .material-symbols-outlined {
+    display: table-cell;
     font-variation-settings: 'FILL' 0,
     'wght' 400,
     'GRAD' 0,
-    'opsz' 48
+    'opsz' 48;
+    text-align: center;
 }
 .borrarcolor{
     color: red;
