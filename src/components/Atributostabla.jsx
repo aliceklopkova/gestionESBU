@@ -4,9 +4,6 @@ function AtributoTabla(props){
     return(
         <th>{props.name}</th>
     );
-
-
-
 }
 
 
