@@ -5,16 +5,19 @@ import HomeIcon from '@mui/icons-material/Home';
 
 
 function Buttonsgroup() {
-  return (
-      <div className="sidebar">
-          <Link  to={"/home"}><HomeIcon /><span>Home</span></Link>
-          <Link to={"/estudiante"}>Estudiantes</Link>
-          <Link to={"/profesor"}>Profesores</Link>
+    return (
+        <div className="sidebar">
+            <Link to={"/home"}>
+                    <HomeIcon/>
+                    <span>Principal</span>
+            </Link>
+            <Link to={"/estudiante"}>Estudiantes</Link>
+            <Link to={"/profesor"}>Profesores</Link>
 
 
-      </div>
+        </div>
 
-  );
+    );
 }
 
 export default Buttonsgroup;
