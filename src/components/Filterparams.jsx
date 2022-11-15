@@ -1,5 +1,6 @@
 import React from 'react';
 import {Autocomplete, Box, TextField} from "@mui/material";
+import formFieldDescription from "../data/formFieldDescription";
 
 function FilterParams({selectedFilters, setSelectedFilter, filterFields}) {
     return (
@@ -14,7 +15,7 @@ function FilterParams({selectedFilters, setSelectedFilter, filterFields}) {
                 limitTags={3}
                 id="multiple-limit-tags"
                 options={filterFields}
-                getOptionLabel={(option) => option}
+                getOptionLabel={(option) => formFieldDescription[option].name}
                 renderInput={(params) => (
                     <TextField {...params} label="Filtros" placeholder=""/>
                 )}
