@@ -1,6 +1,7 @@
 const tableFieldDescription = {
     nombre: "Nombre",
-    apellidos: "Apellidos",
+    primer_apellido: "Primer Apellido",
+    segundo_apellido: "Segundo Apellido",
     fecha_nacimiento: "Fecha de nacimiento",
     ci: "CI",
     direccion: "Dirección",
