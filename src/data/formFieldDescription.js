@@ -6,11 +6,18 @@ const formFieldDescription = {
         secondEntry: "Escriba el nombre ",
         text: "",
     },
-    apellidos: {
-        id: "FormControlApellidos",
-        name: "Apellidos",
+    primer_apellido: {
+        id: "FormControlApellido1",
+        name: "Primer Apellido",
         type: "text",
-        secondEntry: "Escriba los apellidos ",
+        secondEntry: "Escriba el primer apellido ",
+        text: "",
+    },
+    segundo_apellido: {
+        id: "FormControlApellido2",
+        name: "Segundo Apellido",
+        type: "text",
+        secondEntry: "Escriba el segundo apellido ",
         text: "",
     },
     fecha_nacimiento: {
