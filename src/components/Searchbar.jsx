@@ -1,6 +1,7 @@
 import React from "react";
 import './Searchbar.css';
-import {Box, TextField} from "@mui/material";
+import {Box, Stack, TextField} from "@mui/material";
+import FilterParams from "./Filterparams";
 
 
 function NavScrollExample({setSearchParam}) {
@@ -10,9 +11,20 @@ function NavScrollExample({setSearchParam}) {
         setSearchParam(value)
     }
     return (
-        <Box sx={{width: "700px", maxWidth: "100%"}}>
-            <TextField fullWidth onChange={handleChange} size="small" label="Buscar"/>
+        <Box>
+            <Stack direction="row"  spacing={2}>
+
+            <Box sx={{width: "700px", maxWidth: "100%"}} >
+                <TextField fullWidth onChange={handleChange} size="small" label="Buscar"/>
+            </Box>
+                 <Box sx={{width:"20px", maxWidth: "100%", paddingTop:"5px"}}>
+                <span className="material-symbols-outlined">search</span>
+            </Box>
+            </Stack>
+
         </Box>
+
+
     );
 }
 
