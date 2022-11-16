@@ -1,4 +1,5 @@
 const tableFieldDescription = {
+    id:"ID",
     nombre: "Nombre",
     primer_apellido: "Primer Apellido",
     segundo_apellido: "Segundo Apellido",
@@ -24,6 +25,8 @@ const tableFieldDescription = {
     curso: "Curso",
     archivo: "Archivo",
     nivel_de_estudio: "Nivel de Estudio",
-    categoria_cientifica: "Categoria Cientifica"
+    categoria_cientifica: "Categoria Cientifica",
+    profesor: "Profesor",
+    numero_grupo: "Numero"
 }
 export default tableFieldDescription;
