@@ -1,5 +1,8 @@
+import Profesor from "./profesor";
+
 const ProfesorGuiaModel = {
-    grupo: "",
+    id: "",
     profesor: "",
+    grupo: "",
 }
 export default ProfesorGuiaModel;
