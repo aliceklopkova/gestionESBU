@@ -1,4 +1,5 @@
 const NotaModel={
+    id: "",
     valor:"",
     tipo:"",
     estudiante:"",
