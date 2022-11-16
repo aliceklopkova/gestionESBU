@@ -5,6 +5,8 @@
     width: 250px;
     height: 250px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -45,6 +47,7 @@
 
 /* Add some padding inside the card container */
 .containerc {
+    display: contents;
     padding: 2px 16px;
     text-align: center;
 }

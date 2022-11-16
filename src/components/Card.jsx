@@ -5,7 +5,7 @@ import './Card.css';
 function Cardr(props) {
     return (
         <div className={'cardc'}>
-            <div className={props.style}></div>
+            <div className={props.style}/>
             <div className="containerc">
                 <h4 className={'material-symbols-outlined'}>
                     <p style={{fontSize: "30px"}}>{props.symbol}</p>
