@@ -11,12 +11,6 @@ import FilterParams from "./Filterparams";
 import {Stack} from "@mui/material";
 import FilterForm from "./FilterForm";
 
-const createRow = (item, model) => {
-    const row = new model()
-    Object.assign(row, item)
-    return row
-}
-
 function BasicTable({fields, model, api}) {
     const location = useLocation()
     const [data, setData] = useState([])
@@ -24,15 +18,12 @@ function BasicTable({fields, model, api}) {
     const [filterFields, setFilterFields] = useState([])
     const [selectedFilters, setSelectedFilter] = useState([])
     const [filterParams, setFilterParams] = useState({})
-    let count = 0;
-    var caracter = "#";
-    var editar = "Editar";
 
     useEffect(() => {
-        api("filters").get().then((resp)=>{
+        api("filters").get().then((resp) => {
             setFilterFields(resp.data['filters'])
         })
-    })
+    }, [])
     useEffect(() => {
         async function fetchData() {
             return await api().list({search: searchParam, ...filterParams})
@@ -42,11 +33,12 @@ function BasicTable({fields, model, api}) {
         return () => {
             setData([])
         }
-    }, [searchParam, filterParams])
+    }, [searchParam, filterParams, location])
     return (
         <div>
             <Stack direction="row" sx={{marginBottom: "20px", marginTop: "30px", marginLeft: "30px"}} spacing={2}>
-                <FilterParams filterFields={filterFields} setSelectedFilter={setSelectedFilter} selectedFilters={selectedFilters}/>
+                <FilterParams filterFields={filterFields} setSelectedFilter={setSelectedFilter}
+                              selectedFilters={selectedFilters}/>
                 <Searchbar setSearchParam={setSearchParam}/>
             </Stack>
             <FilterForm selectedFilters={selectedFilters} setFilterParams={setFilterParams}/>
@@ -58,7 +50,6 @@ function BasicTable({fields, model, api}) {
                     <Table striped bordered hover responsive>
                         <thead className={"textoatributo"}>
                         <tr>
-                            <th>{caracter}</th>
                             {fields.map(atributo => (
                                     <AtributoTabla key={atributo} name={tableFieldDescription[atributo]}/>
                                 )
@@ -69,9 +60,8 @@ function BasicTable({fields, model, api}) {
                         </thead>
                         <tbody>
                         {data.map((item) => {
-                            count += 1
                             return (
-                                <ContenidoTabla count={count} fields={fields} item={item} data={data}/>
+                                <ContenidoTabla fields={fields} item={item} data={data}/>
                             )
                         })}
                         </tbody>
