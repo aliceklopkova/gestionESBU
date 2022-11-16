@@ -1,24 +1,22 @@
 import React from 'react';
 import './Buttonsgroup.css';
 import {Link} from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
+import navItems from "../data/nav-items";
 
 
-function Buttonsgroup() {
-    return (
-        <div className="sidebar">
-            <Link to={"/home"}>
-                    <HomeIcon/>
-                    <span>Principal</span>
+const Buttonsgroup = () => (
+    <div className="sidebar">
+        {navItems.map(({icon, path, name}) => (
+            <Link to={path}>
+                <div style={{display: "flex"}}>
+                    {icon}
+                    <span style={{padding: "0 5px"}}>{name}</span>
+                </div>
             </Link>
-            <Link to={"/estudiante"}>Estudiantes</Link>
-            <Link to={"/profesor"}>Profesores</Link>
+        ))}
+    </div>
 
-
-        </div>
-
-    );
-}
+)
 
 export default Buttonsgroup;
 
