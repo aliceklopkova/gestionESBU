@@ -11,9 +11,6 @@ function CustomForm({fields, model, api, modificar}) {
     const [data, setData] = useState([])
     const [modData, setModData] = useState([])
     const {id} = useParams()
-
-    let count = 0;
-    const caracter = "#";
     useEffect(() => {
         if (modificar) {
             api(id).get().then((items) => {
@@ -42,12 +39,12 @@ function CustomForm({fields, model, api, modificar}) {
         <div className={'Formsize'}>
             <Form onSubmit={handleSubmit}>
                 {!modificar ? <div>
-                    {fields.map((item) => (
+                    {fields.filter(field=>field !== 'id').map((item) => (
                             <CampoFormulario key={item} campo={item} data={formFieldDescription[item]} setData={setData}/>
                         )
                     )}
                 </div> : <div>
-                    {fields.map((key) => (
+                    {fields.filter(field=>field !== 'id').map((key) => (
                             <CampoFormulario key={key} campo={key} setData={setData}
                                              data={{...formFieldDescription[key], values: modData[key]}}/>
                         )
