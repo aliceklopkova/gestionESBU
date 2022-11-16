@@ -6,7 +6,6 @@ function ContenidoTabla({count, item, fields}) {
     const location = useLocation()
     return (
         <tr>
-            <td>{count}</td>
             {fields.map((field) => (
                 <td key={field}>{item[field]}</td>
             ))}
