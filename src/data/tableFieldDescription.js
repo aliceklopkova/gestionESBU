@@ -88,7 +88,17 @@ const tableFieldDescription = {
     categoria_docente: {
         id: "categoria_docente",
         label: "Categoria Docente",
-        type: "text"
+        type: "select",
+        values: {
+            profesor_titular: 'Profesor Titular',
+            profesor_auxiliar: 'Profesor Auxiliar',
+            asistente: 'Asistente',
+            instructor: 'Instructor',
+            instructor_auxiliar: 'Instructor Auxiliar',
+            auxiliar_tecnico: 'Auxiliar Técnico de la Docencia',
+            profesor_de_merito: 'Profesor de Mérito',
+            profesor_invitado: 'Profesor Invitado',
+        }
     },
     asignatura: {
         id: "asignatura",
@@ -138,7 +148,12 @@ const tableFieldDescription = {
     grado_academico: {
         id: "grado_academico",
         label: "Grado Académico",
-        type: "text"
+        type: "select",
+        values:{
+            universitario: 'Universitario',
+            master: 'Máster en Ciencias',
+            doctor: 'Doctor en Ciencias'
+        }
     },
     profesor: {
         id: "profesor",
