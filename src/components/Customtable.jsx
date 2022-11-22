@@ -23,7 +23,7 @@ function BasicTable({fields, model, api}) {
         api("filters").get().then((resp) => {
             setFilterFields(resp.data['filters'])
         })
-    }, [])
+    }, [location])
     useEffect(() => {
         async function fetchData() {
             return await api().list({search: searchParam, ...filterParams})
