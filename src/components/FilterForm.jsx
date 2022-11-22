@@ -1,6 +1,7 @@
 import React from "react"
 import {Box, Stack, TextField} from "@mui/material";
 import formFieldDescription from "../data/formFieldDescription";
+import CustomField from "./form/custom-field";
 
 const FilterForm = ({selectedFilters, setFilterParams}) => {
     const handleChange = (e) => {
@@ -12,13 +13,13 @@ const FilterForm = ({selectedFilters, setFilterParams}) => {
     return (
         <Stack sx={{marginBottom: "30px", marginLeft: "30px", marginRight: "20px"}} direction="row" spacing={2}>
             {selectedFilters.map(filter => (
-                <TextField
+                <CustomField
+                    {...formFieldDescription[filter]}
+                    sx={{width: "200px"}}
                     size="small"
-                    type={formFieldDescription[filter].type}
-                    id={filter}
-                    label={formFieldDescription[filter].name}
-                    name={filter}
+
                     onChange={handleChange}
+                    setParams={setFilterParams}
                 />
             ))}
         </Stack>
