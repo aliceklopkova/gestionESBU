@@ -15,9 +15,9 @@ const Navbarapp = () => (
             <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
                     <Link style={{textDecoration: "none"}} to="/logout">
-                        <span style={{paddingRight: "5px"}} className="material-symbols-outlined">
-                            account_circle
-                        </span>
+                        {/*<span style={{paddingRight: "5px"}} className="material-symbols-outlined">*/}
+                        {/*    account_circle*/}
+                        {/*</span>*/}
                         <span className="material-symbols-outlined">
                             logout
                         </span>
