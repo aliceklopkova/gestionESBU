@@ -3,18 +3,19 @@ import './Customformulario.css';
 import CustomField from "./form/custom-field";
 import {Box, Button, Grid, Stack} from "@mui/material";
 import formFieldDescription from "../data/formFieldDescription";
-import {useLocation, Link} from "react-router-dom";
-import {useParams, useNavigate} from "react-router";
+import {Link, useLocation} from "react-router-dom";
+import {useNavigate, useParams} from "react-router";
 
 
-function CustomForm({fields, model, api, modificar}) {
+function CustomForm({fields, model, api}) {
     const location = useLocation()
     const [data, setData] = useState([])
     const [modData, setModData] = useState([])
     const {id} = useParams()
     const navigate = useNavigate()
+
     useEffect(() => {
-        if (modificar) {
+        if (id) {
             api(id).get().then((items) => {
                 if (items.status === 200) {
                     setModData(items.data)
@@ -29,7 +30,7 @@ function CustomForm({fields, model, api, modificar}) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        modificar ?
+        id ?
             api(id).update(data).then((res) => {
                 console.log(res)
                 navigate(`/${location.pathname.split("/")[1]}`)
@@ -43,27 +44,32 @@ function CustomForm({fields, model, api, modificar}) {
             })
     }
     return (
-        <Box component="form" sx={{flexGrow: 1, padding: "50px", width:"100%"}} onSubmit={handleSubmit}>
+        <Box component="form" sx={{flexGrow: 1, padding: "50px", width: "100%"}} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-                {!modificar ?
+                {!id ?
                     fields.filter(field => field !== 'id').map((item) => (
                         <Grid xs={12} md={3} sm={6}>
-                            <CustomField  {...formFieldDescription[item]} setParams={setData} sx={{width: "90%", margin:"15px 0"}}/>
+                            <CustomField  {...formFieldDescription[item]} params={data} setParams={setData}
+                                          sx={{width: "90%", margin: "15px 0"}}/>
                         </Grid>
                     ))
                     :
                     fields.filter(field => field !== 'id').map((key) => (
-                        <Grid xs={12} md={3} sm={6}>
-                            <CustomField  {...formFieldDescription[key]} setParams={setData} defaultValue={modData[key]} sx={{width: "90%", margin:"15px 0"}}/>
-                        </Grid>
+                        modData && modData[key] ?
+                            <Grid xs={12} md={3} sm={6}>
+                                <CustomField  {...formFieldDescription[key]} mod={true} setParams={setData}
+                                              defaultValue={modData[key]} sx={{width: "90%", margin: "15px 0"}}/>
+                            </Grid>
+                            :
+                            null
                     ))
                 }
             </Grid>
-            <Stack sx={{marginTop:"15px"}} direction="row" spacing={2}>
-                    <Button sx={{width: '100px'}} variant="contained" color="success" type="submit">Guardar</Button>
-                    <Link style={{textDecoration: "none"}} to={`/${location.pathname.split("/")[1]}`}>
-                        <Button sx={{width: '100px'}} variant="contained" color="error" type="">Cancelar</Button>
-                    </Link>
+            <Stack sx={{marginTop: "15px"}} direction="row" spacing={2}>
+                <Button sx={{width: '100px'}} variant="contained" color="success" type="submit">Guardar</Button>
+                <Link style={{textDecoration: "none"}} to={`/${location.pathname.split("/")[1]}`}>
+                    <Button sx={{width: '100px'}} variant="contained" color="error" type="">Cancelar</Button>
+                </Link>
             </Stack>
         </Box>
 
