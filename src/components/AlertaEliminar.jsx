@@ -13,19 +13,17 @@ function AlertaEliminar({api}) {
         backgroundColor: "red"
     }
     const handleClick = () => {
-        api(id).delete()
-        navigate(`/${location.pathname.split("/")[1]}`)
+        api(id).delete().then(() => {
+            navigate(`/${location.pathname.split("/")[1]}`)
+        })
+
     }
     return (
         <Modal show={true} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton>
-                <Modal.Title style={{textAlign:"center"}} id="contained-modal-title-vcenter">
-                    <div style={{}}>
-                        <span style={{color: "red"}} className="material-symbols-outlined">
-warning
-</span> Eliminar elemento
-                    </div>
-
+                <Modal.Title style={{textAlign: "-webkit-center", width: "100%"}} id="contained-modal-title-vcenter">
+                    <span style={{color: "red"}} className="material-symbols-outlined">warning</span>
+                    Eliminar elemento
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
