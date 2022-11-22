@@ -51,7 +51,7 @@ function BasicTable({fields, model, api}) {
                         <thead className={"textoatributo"}>
                         <tr>
                             {fields.map(atributo => (
-                                    <AtributoTabla key={atributo} name={tableFieldDescription[atributo]}/>
+                                    <AtributoTabla key={atributo} name={tableFieldDescription[atributo].label}/>
                                 )
                             )}
                             <AtributoTabla key="editar" name="Editar"/>
