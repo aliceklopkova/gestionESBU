@@ -9,8 +9,13 @@ const ModelField = ({id, label, required, setParams, fullWidth, width, defaultVa
 
     useEffect(() => {
         api[id]().list().then(resp => {
-            console.log(resp)
             setData(resp.data)
+            if (defaultValue) {
+                setValue(defaultValue)
+                setParams(params => (
+                    {...params, [id]: defaultValue.id}
+                ))
+            }
         })
     }, [])
 
@@ -27,9 +32,9 @@ const ModelField = ({id, label, required, setParams, fullWidth, width, defaultVa
     }
 
     return (
-        fullWidth ?
             <Autocomplete
                 size="small"
+                fullWidth={fullWidth || false}
                 value={value}
                 disablePortal
                 id="combo-box-demo"
@@ -44,24 +49,6 @@ const ModelField = ({id, label, required, setParams, fullWidth, width, defaultVa
                 renderOption={((props, option) => <li {...props}>{option["object_name"]}</li>)}
                 renderInput={(params) => (
                     <TextField helperText={helperText} fullWidth {...params} label={label}/>)}
-            />
-            :
-            <Autocomplete
-                size="small"
-                value={value}
-                disablePortal
-                id="combo-box-demo"
-                onChange={handleChange}
-                selectOnFocus
-                clearOnBlur
-                handleHomeEndKeys
-                options={data}
-                getOptionLabel={option => option["object_name"]}
-                sx={{width: width, ...sx}}
-                freeSolo
-                renderOption={((props, option) => <li {...props}>{option["object_name"]}</li>)}
-                renderInput={(params) => (
-                    <TextField helperText={helperText} {...params} label={label}/>)}
             />
     )
 }

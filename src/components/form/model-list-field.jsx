@@ -1,19 +1,22 @@
 import React, {useEffect, useState} from "react"
-import models from "../../models";
 import api from "../../api";
 import {Autocomplete, TextField} from "@mui/material";
 
 const ModelListField = ({id, model, label, required, setParams, fullWidth, width, defaultValue, sx, helperText}) => {
     const [data, setData] = useState([])
     const [value, setValue] = useState([])
-    const {modelName} = models[model]
 
     useEffect(() => {
         api[model]().list().then(resp => {
             setData(resp.data)
-            setValue(resp.data.filter((obj) => (
-                defaultValue.indexOf(obj["object_name"]) !== -1
-            )))
+            if (defaultValue) {
+                setValue(defaultValue)
+                setParams(data => {
+                    const state = []
+                    defaultValue.map(({id}) => state.push(id))
+                    return {...data, [id]: state}
+                })
+            }
         })
     }, [])
 
