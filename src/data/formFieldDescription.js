@@ -269,7 +269,7 @@ const formFieldDescription = {
         id: "archivo",
         label: "Archivo",
         helperText: "Inserte el archivo",
-        required: true,
+        required: false,
         type: "file",
     },
 
