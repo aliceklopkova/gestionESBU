@@ -15,7 +15,7 @@ function FilterParams({selectedFilters, setSelectedFilter, filterFields}) {
                 limitTags={3}
                 id="multiple-limit-tags"
                 options={filterFields}
-                getOptionLabel={(option) => formFieldDescription[option].name}
+                getOptionLabel={(option) => formFieldDescription[option].label}
                 renderInput={(params) => (
                     <TextField {...params} label="Filtros" placeholder=""/>
                 )}
