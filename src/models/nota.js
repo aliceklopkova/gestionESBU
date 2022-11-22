@@ -1,8 +1,8 @@
 const NotaModel={
     id: "",
-    valor:"",
-    tipo:"",
     estudiante:"",
     asignatura:"",
+    tipo:"",
+    valor:"",
 }
 export default NotaModel;

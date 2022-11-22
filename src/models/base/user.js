@@ -11,7 +11,6 @@ const User = {
     provincia: "",
     numero_telefono: "",
     genero: "",
-    edad: "",
 }
 
 export default User

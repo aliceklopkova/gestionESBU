@@ -1,6 +1,6 @@
 const ProgramaEstudioModel={
     id: "",
-    asignatura:"",
+    asignaturas:"",
     curso:"",
     grado:"",
     archivo:"",

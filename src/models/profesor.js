@@ -3,8 +3,9 @@ import User from "./base/user";
 const ProfesorModel = {
     ...User,
     categoria_docente: "",
-    grupos: "",
-    asignatura: ""
+    grado_academico: "",
+    grupos: [],
+    asignaturas: []
 }
 
 export default ProfesorModel;
