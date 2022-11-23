@@ -48,7 +48,7 @@ const navItems = [
     {
         icon: <FolderIcon/>,
         path: "/programa-de-estudio",
-        name: "Programa de Estudio"
+        name: "Plan de Estudio"
     },
 ]
 
