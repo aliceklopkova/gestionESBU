@@ -1,8 +1,10 @@
 import React from "react";
 import './Card.css';
+import {Link} from "react-router-dom";
 
 
 function Cardr(props) {
+    const {url} = props
     return (
         <div className={'cardc'}>
             <div className={props.style}/>
@@ -13,7 +15,9 @@ function Cardr(props) {
                     <div className={'num'}>
                         <p className={'letrac'}>{props.number}</p>
                     </div>
+                    <Link to={`/${url}`} style={{textDecoration: "none"}}>
                     <button className={'btnc'}> más...</button>
+                        </Link>
                 </h4>
             </div>
         </div>
