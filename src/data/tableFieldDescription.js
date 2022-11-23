@@ -170,5 +170,15 @@ const tableFieldDescription = {
         label: "Asignaturas",
         type: "modelList"
     },
+    horas_clases: {
+        id: "horas_clases",
+        label: "Horas Clases",
+        type: "text"
+    },
+    frecuencia: {
+        id: "frecuencia",
+        label: "Frecuencia",
+        type: "text"
+    }
 }
 export default tableFieldDescription;
