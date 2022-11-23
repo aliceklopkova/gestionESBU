@@ -27,7 +27,7 @@ const formFieldDescription = {
         type: "date",
         helperText: "Escriba la fecha de nacimiento ",
         required: true,
-        defaultValue: `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
+        defaultValue: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
     },
     ci: {
         id: "ci",
@@ -75,7 +75,7 @@ const formFieldDescription = {
         id: "genero",
         label: "Género ",
         type: "select",
-        helperText: "Escriba 'F' para femenino o 'M' para masculino",
+        helperText: "",
         required: true,
         values: [
             {
@@ -196,7 +196,7 @@ const formFieldDescription = {
     },
     asignaturas: {
         id: "asignaturas",
-        label:"Asignaturas",
+        label: "Asignaturas",
         required: false,
         type: "modelList",
         model: "asignatura",
@@ -272,6 +272,20 @@ const formFieldDescription = {
         required: false,
         type: "file",
     },
+    horas_clases: {
+        id: "horas_clases",
+        label: "Horas Clases",
+        helperText: "Inserte el archivo",
+        required: false,
+        type: "number"
+    },
+    frecuencia: {
+        id: "frecuencia",
+        label: "Frecuencia",
+        helperText: "Inserte el archivo",
+        required: false,
+        type: "number"
+    }
 
 
 }
