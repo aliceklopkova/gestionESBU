@@ -1,8 +1,9 @@
 const ProgramaEstudioModel={
     id: "",
-    asignaturas:"",
+    asignatura:"",
     curso:"",
     grado:"",
-    archivo:"",
+    horas_clases:"",
+    frecuencia:"",
 }
 export default ProgramaEstudioModel;
