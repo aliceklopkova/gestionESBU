@@ -47,17 +47,17 @@ function CustomForm({fields, model, api}) {
         <Box component="form" sx={{flexGrow: 1, padding: "50px", width: "100%"}} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
                 {!id ?
-                    fields.filter(field => field !== 'id').map((item) => (
-                        <Grid xs={12} md={3} sm={6}>
-                            <CustomField  {...formFieldDescription[item]} params={data} setParams={setData}
+                    fields.filter(field => field !== 'id' && field !== 'edad').map((item) => (
+                        <Grid item key={item} xs={12} md={3} sm={6}>
+                            <CustomField key={item}  {...formFieldDescription[item]} params={data} setParams={setData}
                                           sx={{width: "90%", margin: "15px 0"}}/>
                         </Grid>
                     ))
                     :
-                    fields.filter(field => field !== 'id').map((key) => (
+                    fields.filter(field => field !== 'id' && field !== 'edad').map((key) => (
                         modData && modData[key] ?
-                            <Grid xs={12} md={3} sm={6}>
-                                <CustomField  {...formFieldDescription[key]} mod={true} setParams={setData}
+                            <Grid item key={key} xs={12} md={3} sm={6}>
+                                <CustomField key={key} {...formFieldDescription[key]} mod={true} params={data} setParams={setData}
                                               defaultValue={modData[key]} sx={{width: "90%", margin: "15px 0"}}/>
                             </Grid>
                             :
