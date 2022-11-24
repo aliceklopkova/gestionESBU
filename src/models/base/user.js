@@ -3,6 +3,7 @@ const User = {
     nombre: "",
     primer_apellido: "",
     segundo_apellido: "",
+    edad: "",
     fecha_nacimiento: "",
     ci: "",
     direccion: "",
