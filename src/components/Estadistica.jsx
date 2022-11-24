@@ -29,7 +29,6 @@ function Estadistica() {
         })
 
     }, [])
-    console.log(data);
     return (
         <div className={'estadistic'}>
             <div className={'posicion_card'}>

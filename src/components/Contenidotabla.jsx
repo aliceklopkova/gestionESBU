@@ -10,7 +10,6 @@ function ContenidoTabla({count, item, fields}) {
     return (
         <tr>
             {fields.map((field) => <CustomCell key={field} data={item[field]} description={tableFieldDescription[field]}/>)}
-
             <td className={'material-symbols-outlined '}>
                 <Link className={'icono'} style={{textDecoration: 'none'}}
                       to={`${location.pathname}/${item['id']}`}>edit_square</Link></td>
