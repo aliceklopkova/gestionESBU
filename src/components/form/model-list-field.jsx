@@ -2,9 +2,11 @@ import React, {useEffect, useState} from "react"
 import api from "../../api";
 import {Autocomplete, TextField} from "@mui/material";
 
-const ModelListField = ({id, model, label, required, setParams, fullWidth, width, defaultValue, sx, helperText}) => {
+const ModelListField = (props) => {
+    const {id, model, label, required, setParams, fullWidth, width, defaultValue, sx, helperText, noOptionsText} = props
     const [data, setData] = useState([])
     const [value, setValue] = useState([])
+    const [invalid, setInvalid] = useState(false)
 
     useEffect(() => {
         api[model]().list().then(resp => {
@@ -21,6 +23,7 @@ const ModelListField = ({id, model, label, required, setParams, fullWidth, width
     }, [])
 
     const handleChange = (e, newValue) => {
+        setInvalid(false)
         setValue(newValue)
         newValue ?
             setParams(data => {
@@ -34,46 +37,27 @@ const ModelListField = ({id, model, label, required, setParams, fullWidth, width
             })
     }
     return (
-        fullWidth ?
-            <Autocomplete
-                limitTags={2}
-                multiple
-                size="small"
-                value={value}
-                disablePortal
-                id="combo-box-demo"
-                onChange={handleChange}
-                selectOnFocus
-                clearOnBlur
-                handleHomeEndKeys
-                options={data}
-                getOptionLabel={option => option["object_name"]}
-                sx={{width: width, ...sx}}
-                freeSolo
-                renderOption={((props, option) => <li {...props}>{option["object_name"]}</li>)}
-                renderInput={(params) => (
-                    <TextField helperText={helperText} fullWidth {...params} label={label}/>)}
-            />
-            :
-            <Autocomplete
-                limitTags={2}
-                multiple
-                size="small"
-                value={value}
-                disablePortal
-                id="combo-box-demo"
-                onChange={handleChange}
-                selectOnFocus
-                clearOnBlur
-                handleHomeEndKeys
-                options={data}
-                getOptionLabel={option => option["object_name"]}
-                sx={{width: width, ...sx}}
-                freeSolo
-                renderOption={((props, option) => <li {...props}>{option["object_name"]}</li>)}
-                renderInput={(params) => (
-                    <TextField helperText={helperText} {...params} label={label}/>)}
-            />
+        <Autocomplete
+            onInvalid={() => setInvalid(true)}
+            limitTags={2}
+            noOptionsText={noOptionsText}
+            multiple
+            size="small"
+            value={value}
+            disablePortal
+            id="combo-box-demo"
+            onChange={handleChange}
+            selectOnFocus
+            clearOnBlur
+            handleHomeEndKeys
+            options={data}
+            getOptionLabel={option => option["object_name"]}
+            sx={{width: width, ...sx}}
+            renderOption={((props, option) => <li {...props}>{option["object_name"]}</li>)}
+            renderInput={(params) => (
+                <TextField required={required} error={invalid} helperText={helperText}
+                           fullWidth={fullWidth} {...params} label={label}/>)}
+        />
     )
 }
 

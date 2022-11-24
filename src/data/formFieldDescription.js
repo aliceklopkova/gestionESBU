@@ -1,3 +1,5 @@
+import {InputAdornment} from "@mui/material";
+
 const today = new Date()
 const formFieldDescription = {
     nombre: {
@@ -33,8 +35,10 @@ const formFieldDescription = {
         id: "ci",
         label: "CI",
         type: "text",
-        helperText: "Escriba el CI ",
+        helperText: "Escriba el CI",
+        errorText: "Ya existe una persona con ese CI",
         required: true,
+        inputProps: {inputMode: 'numeric', pattern: '[0-9]*', maxLength: 11, minLength: 11}
     },
     direccion: {
         id: "direccion",
@@ -70,6 +74,8 @@ const formFieldDescription = {
         type: "text",
         helperText: "Escriba el teléfono",
         required: true,
+        InputProps: {startAdornment: <InputAdornment position="start">+53</InputAdornment>},
+        inputProps: {inputMode: 'numeric', pattern: '[0-9]*', maxLength: 8, minLength: 8}
     },
     genero: {
         id: "genero",
@@ -88,13 +94,6 @@ const formFieldDescription = {
             }
         ],
 
-    },
-    edad: {
-        id: "edad",
-        label: "Edad",
-        type: "text",
-        helperText: "Escriba 'F' para femenino o 'M' para masculino",
-        required: true,
     },
     nombre_apellido_padre: {
         id: "nombre_apellido_padre",
@@ -116,6 +115,7 @@ const formFieldDescription = {
         helperText: "Escriba el grado",
         required: true,
         type: "model",
+        noOptionsText: "No existen grados creados"
     },
     grupo: {
         id: "grupo",
@@ -123,6 +123,7 @@ const formFieldDescription = {
         helperText: "Escriba el grupo",
         required: true,
         type: "model",
+        noOptionsText: "No existen grupos creados"
     },
     grado_academico: {
         id: "grado_academico",
@@ -193,6 +194,7 @@ const formFieldDescription = {
         type: "modelList",
         model: "grupo",
         helperText: "Seleccione los grupos",
+        noOptionsText: "No existen grupos creados"
     },
     asignaturas: {
         id: "asignaturas",
@@ -201,6 +203,7 @@ const formFieldDescription = {
         type: "modelList",
         model: "asignatura",
         helperText: "Seleccione las asignaturas",
+        noOptionsText: "No existen asignaturas creadas"
     },
     numero_grupo: {
         id: "numero_grupo",
@@ -208,6 +211,7 @@ const formFieldDescription = {
         type: "text",
         helperText: "Escriba el número del Grupo",
         required: true,
+        inputProps: {inputMode: 'numeric', pattern: '[0-9]*', maxLength: 2, minLength: 1}
     },
     profesor: {
         id: "profesor",
@@ -215,6 +219,7 @@ const formFieldDescription = {
         helperText: "Seleccione el profesor",
         required: true,
         type: "model",
+        noOptionsText: "No existen profesores creados"
     },
     estudiante: {
         id: "estudiante",
@@ -222,6 +227,7 @@ const formFieldDescription = {
         helperText: "Seleccione el estudiante",
         required: true,
         type: "model",
+        noOptionsText: "No existen estudiantes creados"
     },
     asignatura: {
         id: "asignatura",
@@ -229,13 +235,15 @@ const formFieldDescription = {
         helperText: "Seleccione la asignatura",
         required: true,
         type: "model",
+        noOptionsText: "No existen asignaturas creadas"
     },
     valor: {
         id: "valor",
         label: "Valor",
         helperText: "Inserte el valor de la nota",
         required: true,
-        type: "number",
+        type: "text",
+        inputProps: { inputMode: 'numeric', pattern: '[0-9]*', maxLength: 3, minLength: 1 }
     },
     tipo: {
         id: "tipo",
@@ -264,6 +272,7 @@ const formFieldDescription = {
         helperText: "Seleccione el curso",
         required: true,
         type: "model",
+        noOptionsText: "No existen cursos creados"
     },
     archivo: {
         id: "archivo",
@@ -277,14 +286,16 @@ const formFieldDescription = {
         label: "Horas Clases",
         helperText: "Inserte el archivo",
         required: false,
-        type: "number"
+        type: "text",
+        inputProps: { inputMode: 'numeric', pattern: '[0-9]*', maxLength: 3, minLength: 1 }
     },
     frecuencia: {
         id: "frecuencia",
         label: "Frecuencia",
         helperText: "Inserte el archivo",
+        type: "text",
         required: false,
-        type: "number"
+        inputProps: { inputMode: 'numeric', pattern: '[0-9]*', maxLength: 2, minLength: 1 }
     }
 
 
