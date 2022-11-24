@@ -1,9 +1,18 @@
-import React from "react"
-import {Box, Stack, TextField} from "@mui/material";
+import React, {useEffect, useState} from "react"
+import {Stack} from "@mui/material";
 import formFieldDescription from "../data/formFieldDescription";
 import CustomField from "./form/custom-field";
 
-const FilterForm = ({selectedFilters, setFilterParams}) => {
+const FilterForm = ({selectedFilters, filterParams, setFilterParams}) => {
+    useEffect(() => {
+        const state = {}
+        for (let key in filterParams) {
+            if (selectedFilters.includes(key)) {
+                state[key] = selectedFilters[key]
+            }
+        }
+        setFilterParams(state)
+    }, [selectedFilters])
     const handleChange = (e) => {
         const {name, value} = e.target
         setFilterParams((data) => {
