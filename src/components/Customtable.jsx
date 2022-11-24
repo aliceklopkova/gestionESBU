@@ -33,7 +33,9 @@ function BasicTable({fields, model, api}) {
         return () => {
             setData([])
         }
-    }, [searchParam, filterParams, location])
+    }, [searchParam, filterParams, location, selectedFilters])
+
+
     return (
         <div>
             <Stack direction="row" sx={{marginBottom: "20px", marginTop: "30px", marginLeft: "30px"}} spacing={2}>
@@ -41,7 +43,7 @@ function BasicTable({fields, model, api}) {
                               selectedFilters={selectedFilters}/>
                 <Searchbar setSearchParam={setSearchParam}/>
             </Stack>
-            <FilterForm selectedFilters={selectedFilters} setFilterParams={setFilterParams}/>
+            <FilterForm selectedFilters={selectedFilters} filterParams={filterParams} setFilterParams={setFilterParams}/>
 
             <div className="basic-table">
                 <Outlet/>
@@ -61,7 +63,7 @@ function BasicTable({fields, model, api}) {
                         <tbody>
                         {data.map((item) => {
                             return (
-                                <ContenidoTabla fields={fields} item={item} data={data}/>
+                                <ContenidoTabla key={item['id']} fields={fields} item={item} data={data}/>
                             )
                         })}
                         </tbody>

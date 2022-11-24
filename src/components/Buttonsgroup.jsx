@@ -7,7 +7,7 @@ import navItems from "../data/nav-items";
 const Buttonsgroup = () => (
     <div className="sidebar">
         {navItems.map(({icon, path, name}) => (
-            <Link to={path}>
+            <Link key={name} to={path}>
                 <div style={{display: "flex"}}>
                     {icon}
                     <span style={{padding: "0 5px"}}>{name}</span>
